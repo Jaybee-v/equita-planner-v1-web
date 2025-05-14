@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/shared/BackButton";
 import { isAuthenticated } from "@/features/auth/services/isAuthenticated";
 import { CreateInstructorDialog } from "@/features/instructor/components/CreateInstructorDialog";
 import { InstructorCard } from "@/features/instructor/components/InstructorCard";
@@ -22,6 +23,7 @@ export default async function StableInstructorsPage() {
           </section>
         </aside>
         <aside className="bg-background gap-4 rounded shadow drop-shadow-xl p-2 md:p-6 h-fit space-y-2 md:space-y-4 w-full">
+          <BackButton />
           <h2 className="text-lg font-bold">Que faire ?</h2>
           <CreateInstructorDialog stableId={stable.id} />
         </aside>

@@ -13,7 +13,7 @@ import { ActivitiesStatsChart } from "@/features/stable/components/TodayStats";
 import { Bell } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { FaHorseHead } from "react-icons/fa";
+import { FaHelmetSafety } from "react-icons/fa6";
 
 export default async function StableHomePage() {
   const { user, stable } = await isAuthenticated();
@@ -51,7 +51,7 @@ export default async function StableHomePage() {
         auth={{ user, rider: null, instructor: null, stable: stable }}
       />
 
-      <aside className="col-span-3 lg:col-span-2 bg-background md:grid md:grid-cols-2 gap-4 rounded shadow drop-shadow-xl p-2 md:p-6 h-fit space-y-2 md:space-y-4 w-full relative">
+      <aside className="col-span-3 lg:col-span-2 bg-background 2xl:grid 2xl:grid-cols-2 gap-4 rounded shadow drop-shadow-xl p-2 md:p-6 h-fit space-y-2 md:space-y-4 w-full relative">
         <StableRapidAction stable={stable} />
         <section className="p-4 md:p-6 space-y-6 border bg-gray-50 border-gray-200 shadow h-fit w-full rounded-2xl">
           <h3 className="text-lg font-bold">Aujourd&apos;hui au club</h3>
@@ -84,7 +84,7 @@ export default async function StableHomePage() {
 
             <Link href="/app/riders">
               <Button>
-                <FaHorseHead />
+                <FaHelmetSafety />
                 Gérer mes cavaliers
               </Button>
             </Link>

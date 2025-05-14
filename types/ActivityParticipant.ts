@@ -9,7 +9,7 @@ type ActivityParticipant = {
   status: Status;
   createdAt: Date;
   rider?: Rider;
-  activity?: Activity;
+  activity: Activity;
 };
 
 export default ActivityParticipant;

@@ -1,6 +1,8 @@
 import { Gender } from "../enums/Gender";
 import { RiderLevel } from "../enums/RiderLevel";
+import ActivityParticipant from "./ActivityParticipant";
 import AffiliationRequest from "./AffiliationRequest";
+import SlotRequest from "./SlotRequest";
 
 type Rider = {
   id: string;
@@ -13,6 +15,8 @@ type Rider = {
   updatedAt: Date;
   imageUrl: string;
   affiliationRequests: AffiliationRequest[];
+  slotRequests: SlotRequest[];
+  activityParticipants: ActivityParticipant[];
 };
 
 export default Rider;

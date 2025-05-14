@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/shared/BackButton";
 import { ActivityType } from "@/enums/ActivityType";
 import { InviteAllRiders } from "@/features/activity/components/InviteAllRiders";
 import { InviteNewParticipant } from "@/features/activity/components/InviteNewParticipant";
@@ -136,6 +137,7 @@ export default async function StableActivityByIdPage({
       </aside>
       <aside>
         <section className="bg-white p-4 rounded drop-shadow-xl space-y-4">
+          <BackButton />
           <InviteNewParticipant />
           <InviteAllRiders activity={activity} />
           <SendMessageToParticipants />
