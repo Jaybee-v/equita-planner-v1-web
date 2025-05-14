@@ -1,4 +1,5 @@
 "use client";
+import { BackButton } from "@/components/shared/BackButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -68,8 +69,8 @@ export const StableRiderList = ({
   };
 
   return (
-    <section className="flex flex-col-reverse md:flex-row gap-2 md:gap-4">
-      <section className="col-span-2 flex flex-col gap-4 justify-between bg-white rounded drop-shadow-md py-2">
+    <section className="flex flex-col-reverse md:grid grid-cols-3 gap-2 md:gap-4">
+      <section className="col-span-2 w-full flex flex-col gap-4 justify-between bg-white rounded drop-shadow-md py-2">
         <section className=" rounded drop-shadow-md 0 h-fit bg-white">
           <section className="py-2 px-4 space-y-2 border-b">
             <Label htmlFor="search">Rechercher un cavalier</Label>
@@ -149,8 +150,9 @@ export const StableRiderList = ({
           </Select>
         </section>
       </section>
-      <section className="w-full bg-white rounded shadow drop-shadow-xl p-6 space-y-6">
-        <h3 className="text-lg font-bold">
+      <section className="w-full h-fit bg-white rounded shadow drop-shadow-xl p-6 space-y-6">
+        <BackButton />
+        <h3 className="text-lg font-bold flex items-center gap-2">
           <Bell /> Envoyez des notifications
         </h3>
         <section className="grid gap-4">

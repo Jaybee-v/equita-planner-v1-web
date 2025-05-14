@@ -1,6 +1,7 @@
 import Activity from "./Activity";
 import AffiliationRequest from "./AffiliationRequest";
 import { Instructor } from "./Instructor";
+import Price from "./Price";
 import SlotRequest from "./SlotRequest";
 
 type Stable = {
@@ -28,6 +29,7 @@ type Stable = {
   affiliationRequests: AffiliationRequest[];
   instructors: Instructor[];
   slotRequests: SlotRequest[];
+  prices: Price[];
 };
 
 export default Stable;

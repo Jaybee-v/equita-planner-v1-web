@@ -8,6 +8,8 @@ import {
   successSonnerVariant,
 } from "@/lib/sonner-variants";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Key } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -82,6 +84,13 @@ export default function SigninForm() {
             />
           )}
         />
+        <section className="flex justify-end">
+          <Link href="/auth/forgot-password">
+            <Button variant="link" className="" size={"sm"}>
+              <Key /> Mot de passe oublié ?
+            </Button>
+          </Link>
+        </section>
         <Button type="submit">Se connecter</Button>
       </form>
     </Form>

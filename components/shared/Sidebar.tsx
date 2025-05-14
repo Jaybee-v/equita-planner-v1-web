@@ -20,6 +20,7 @@ import {
   User as UserIcon,
 } from "lucide-react";
 import Image from "next/image";
+import { FaHelmetSafety } from "react-icons/fa6";
 import { PiUserFocusDuotone } from "react-icons/pi";
 import { Button } from "../ui/button";
 import {
@@ -94,6 +95,11 @@ const stableItems = [
     title: "Réservations",
     url: "/app/booking",
     icon: <Ticket />,
+  },
+  {
+    title: "Mes cavaliers",
+    url: "/app/riders",
+    icon: <FaHelmetSafety />,
   },
 ];
 

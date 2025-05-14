@@ -26,7 +26,7 @@ export default async function AppLayout({
   return (
     <SidebarProvider>
       <AppSidebar auth={auth} />
-      <main className="w-full px-2 py-20 xl:px-20 bg-primary relative">
+      <main className="w-full px-2 py-20 bg-primary relative">
         <AuthHeader auth={auth} />
         {auth.user.role === UserRole.GUEST && (
           <GuestCreateAccount user={auth.user} />

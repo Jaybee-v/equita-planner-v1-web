@@ -16,15 +16,50 @@ type WelcomeHeaderProps = {
   };
   isSuccessSignin?: boolean;
   isRiderPage?: boolean;
+  isForgotPasswordPage?: boolean;
+  isResetPasswordPage?: boolean;
 };
 
 export const WelcomeHeader = ({
   auth,
   isSuccessSignin,
   isRiderPage,
+  isForgotPasswordPage,
+  isResetPasswordPage,
 }: WelcomeHeaderProps) => {
   const { user, instructor, rider, stable } = auth;
 
+  if (isResetPasswordPage) {
+    return (
+      <section className="col-span-3 md:flex justify-between w-full bg-white rounded drop-shadow-2xl p-8">
+        <section className="leading-5">
+          <h1 className="font-bold md:text-2xl">
+            Réinitialisation de mot de passe
+          </h1>
+          <p className="font-extralight text-muted-foreground">
+            Vous avez fait la demande de réinitialisation de mot de passe ?
+            <br />
+            Renseignez votre nouveau mot de passe
+          </p>
+        </section>
+      </section>
+    );
+  }
+  if (isForgotPasswordPage) {
+    return (
+      <section className="col-span-3 md:flex justify-between w-full bg-white rounded drop-shadow-2xl p-8">
+        <section className="leading-5">
+          <h1 className="font-bold md:text-2xl">Mot de passe oublié</h1>
+          <p className="font-extralight text-muted-foreground">
+            Vous avez oublié votre mot de passe ?
+            <br />
+            Renseignez votre adresse email pour recevoir un lien de
+            réintialisation
+          </p>
+        </section>
+      </section>
+    );
+  }
   if (isRiderPage && rider) {
     return (
       <section className="col-span-3 md:flex justify-between w-full bg-white rounded drop-shadow-2xl p-8">

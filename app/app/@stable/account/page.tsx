@@ -27,12 +27,12 @@ export default async function StableAccountPage() {
   return (
     <div className="space-y-2 md:space-y-4">
       <StableDataCard stable={stable} />
-      <section className="grid grid-cols-2 gap-4">
+      <section className="flex flex-col-reverse lg:grid grid-cols-2 gap-4">
         <section className="rounded bg-white drop-shadow-2xl">
           <h2 className="text-lg font-semibold flex items-center gap-2 border-b py-5 px-6">
             Mes Moniteurs
           </h2>
-          <section className="grid grid-cols-2 gap-4 p-6">
+          <section className="grid md:grid-cols-2 gap-4 p-6">
             {stable.instructors.map((instructor) => (
               <InstructorCard key={instructor.id} instructor={instructor} />
             ))}
