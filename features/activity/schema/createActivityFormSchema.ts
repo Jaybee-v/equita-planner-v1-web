@@ -18,6 +18,9 @@ const createActivityFormSchema = z.object({
   validationParticipantOption: z.nativeEnum(ValidationOption),
   openToMoreLevel: z.boolean(),
   instructorId: z.string().optional(),
+  priceId: z.string({
+    required_error: "Veuillez sélectionner un tarif",
+  }),
 });
 
 export default createActivityFormSchema;

@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { FaHelmetSafety } from "react-icons/fa6";
+import { HiOutlineDocumentCurrencyEuro } from "react-icons/hi2";
 import { PiUserFocusDuotone } from "react-icons/pi";
 import { Button } from "../ui/button";
 import {
@@ -227,13 +228,22 @@ export const AppSidebar = ({ auth }: SidebarProps) => {
                 />
               )}
               {user.role === UserRole.STABLE && (
-                <SidebarMenuLinkItem
-                  item={{
-                    title: "Mon écurie",
-                    url: "/app/account",
-                    icon: <UserIcon />,
-                  }}
-                />
+                <>
+                  <SidebarMenuLinkItem
+                    item={{
+                      title: "Mes tarifs",
+                      url: "/app/account/prices",
+                      icon: <HiOutlineDocumentCurrencyEuro />,
+                    }}
+                  />
+                  <SidebarMenuLinkItem
+                    item={{
+                      title: "Mon écurie",
+                      url: "/app/account",
+                      icon: <UserIcon />,
+                    }}
+                  />
+                </>
               )}
               {user.role === UserRole.INSTRUCTOR && (
                 <SidebarMenuLinkItem

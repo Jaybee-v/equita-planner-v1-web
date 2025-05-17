@@ -81,6 +81,7 @@ export const CreateActivityForm = ({
       validationParticipantOption: ValidationOption.AUTOMATIC,
       openToMoreLevel: true,
       instructorId: undefined,
+      priceId: "",
     },
   });
   useEffect(() => {
@@ -214,7 +215,9 @@ export const CreateActivityForm = ({
             name="type"
             render={({ field }) => (
               <FormItem className="space-y-1">
-                <FormLabel>Type</FormLabel>
+                <FormLabel>
+                  Type <span className="text-red-600">*</span>
+                </FormLabel>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
@@ -242,7 +245,9 @@ export const CreateActivityForm = ({
               name="requiredLevel"
               render={({ field }) => (
                 <FormItem className="space-y-1">
-                  <FormLabel>Niveau requis</FormLabel>
+                  <FormLabel>
+                    Niveau requis <span className="text-red-600">*</span>
+                  </FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -266,6 +271,35 @@ export const CreateActivityForm = ({
             />
           )}
         </section>
+        <FormField
+          control={form.control}
+          name="priceId"
+          render={({ field }) => (
+            <FormItem className="space-y-1">
+              <FormLabel>
+                Tarif <span className="text-red-600">*</span>
+              </FormLabel>
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                value={field.value}
+              >
+                <FormControl>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Sélectionnez un tarif" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {stable.prices.map((price) => (
+                    <SelectItem key={price.id} value={price.id}>
+                      {price.price} €
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="instructorId"

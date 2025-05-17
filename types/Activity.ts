@@ -5,6 +5,7 @@ import { RiderLevel } from "../enums/RiderLevel";
 import { ValidationOption } from "../enums/ValidationOption";
 import ActivityParticipant from "./ActivityParticipant";
 import { Instructor } from "./Instructor";
+import Price from "./Price";
 
 type Activity = {
   id: string;
@@ -28,6 +29,8 @@ type Activity = {
   updatedAt: Date;
   instructorId: string;
   instructor?: Instructor;
+  priceId: string;
+  price: Price;
 };
 
 export default Activity;

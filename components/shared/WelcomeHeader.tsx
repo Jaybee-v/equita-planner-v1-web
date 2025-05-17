@@ -18,6 +18,7 @@ type WelcomeHeaderProps = {
   isRiderPage?: boolean;
   isForgotPasswordPage?: boolean;
   isResetPasswordPage?: boolean;
+  isPricePage?: boolean;
 };
 
 export const WelcomeHeader = ({
@@ -26,6 +27,7 @@ export const WelcomeHeader = ({
   isRiderPage,
   isForgotPasswordPage,
   isResetPasswordPage,
+  isPricePage,
 }: WelcomeHeaderProps) => {
   const { user, instructor, rider, stable } = auth;
 
@@ -232,9 +234,16 @@ export const WelcomeHeader = ({
       <section className="col-span-3 md:flex justify-between w-full bg-white rounded drop-shadow-2xl p-8">
         <section className="leading-5">
           <h1 className="font-bold md:text-2xl">Bonjour, {stable.name} !</h1>
-          <p className="font-extralight text-muted-foreground">
-            Bienvenue sur votre espace de gestion de vos activités équestres
-          </p>
+          {!isPricePage && (
+            <p className="font-extralight text-muted-foreground">
+              Bienvenue sur votre espace de gestion de vos activités équestres
+            </p>
+          )}
+          {isPricePage && (
+            <p className="font-extralight text-muted-foreground">
+              Bienvenue sur votre espace de gestion de vos tarifs
+            </p>
+          )}
         </section>
         <section>
           <p className="text-muted-foreground text-sm font-light max-md:mt-6">

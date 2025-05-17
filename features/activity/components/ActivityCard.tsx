@@ -33,6 +33,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { IoMedalOutline } from "react-icons/io5";
+import { MdEuro } from "react-icons/md";
 import { TbHandClick } from "react-icons/tb";
 import { TiUser } from "react-icons/ti";
 import { toast } from "sonner";
@@ -158,6 +159,16 @@ export const ActivityCard = ({
                   {riderLevelTransformer(a.requiredLevel)}{" "}
                   {isOpenToMoreLevels ? " et +" : null}
                 </span>
+              </article>
+            </section>
+          )}
+          {a.visibility !== ActivityVisibility.PRIVATE && (
+            <section className="flex justify-end">
+              <article
+                className={`flex justify-end w-fit items-center gap-1 border rounded-full px-2 py-1 text-xs shadow-md`}
+              >
+                <MdEuro size={16} />
+                <span className="text-[11px]">{a.price.price} €</span>
               </article>
             </section>
           )}

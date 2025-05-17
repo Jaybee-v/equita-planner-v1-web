@@ -21,6 +21,7 @@ const createActivity = async (
     validationParticipantOption,
     openToMoreLevel,
     instructorId,
+    priceId,
   } = data;
 
   const _data = {
@@ -37,6 +38,7 @@ const createActivity = async (
     validationParticipantOption,
     openToMoreLevel,
     instructorId,
+    priceId,
   };
 
   console.log(_data);

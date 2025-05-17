@@ -1,8 +1,10 @@
 "use client";
 
+import { GoogleConnectButton } from "@/components/shared/GoogleConnectButton";
 import { InputWithLabel } from "@/components/shared/InputWithLabel";
 import { Button } from "@/components/ui/button";
 import { Form, FormField } from "@/components/ui/form";
+import { Separator } from "@/components/ui/separator";
 import { UserRole } from "@/enums/UserRole";
 import {
   errorSonnerVariant,
@@ -62,7 +64,21 @@ export const UserForm = () => {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         {step === 1 && (
           <div>
-            <section className="grid grid-cols-2 gap-4">
+            <GoogleConnectButton start />
+            <div className="max-w-xs mx-auto">
+              <section className="space-y-1.5">
+                <Separator />
+                <Separator />
+              </section>
+              <p className="text-center text-sm text-muted-foreground py-2">
+                ou
+              </p>
+              <section className="space-y-1 5">
+                <Separator />
+                <Separator />
+              </section>
+            </div>
+            <section className="grid grid-cols-2 gap-4 mt-4">
               <aside
                 className={`border border-border rounded-md flex flex-col items-center justify-center gap-2 transition-all duration-300 p-4 cursor-pointer ${
                   form.watch("role") === UserRole.RIDER

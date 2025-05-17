@@ -4,6 +4,7 @@ import { AddActivityButton } from "@/features/activity/components/AddActivityBut
 import { findByStableIdAndWeek } from "@/features/activity/services/find-by-stable-id-and-week";
 import { isAuthenticated } from "@/features/auth/services/isAuthenticated";
 import { NotificationsHub2 } from "@/features/notification/components/NotificationsHub2";
+import { NoPriceDefine } from "@/features/price/components/NoPriceDefine";
 import { CreateStableCard } from "@/features/stable/components/CreateStableCard";
 import { StableRapidAction } from "@/features/stable/components/navigation/RapidAction";
 import { PendingRidersList } from "@/features/stable/components/PendingRidersList";
@@ -47,6 +48,7 @@ export default async function StableHomePage() {
 
   return (
     <div className="grid md:grid-cols-3 gap-4 px-2 py-2 md:px-4 w-full">
+      <NoPriceDefine stable={stable} />
       <WelcomeHeader
         auth={{ user, rider: null, instructor: null, stable: stable }}
       />
